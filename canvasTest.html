@@ -1,0 +1,35 @@
+<html>
+<canvas id="xCanvas" width="400" height="200"/>
+
+
+<script>
+  function setCanvas(){
+    
+       var canvasNode = document.getElementById('xCanvas');
+       
+       var pw = canvasNode.parentNode.clientWidth;
+       var ph = canvasNode.parentNode.clientHeight;
+       
+       canvasNode.height = pw * 0.8 * (canvasNode.height/canvasNode.width);  
+       canvasNode.width = pw * 0.8;
+       canvasNode.style.top = (ph-canvasNode.height)/2 + "px";
+       canvasNode.style.left = (pw-canvasNode.width)/2 + "px";
+       
+       
+    }
+    
+    window.onresize = setCanvas;
+    setCanvas();​
+   </script>
+   <style>
+    #xCanvas{
+  background-color:#000;
+  position:absolute;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+}​
+</style>
+</html>
